@@ -1,4 +1,4 @@
-listaIdEstados = ["do Acre", "de Alagoas", "do Amazonas", "do Amapá", "da Bahia", "do Ceára", "do Distrito Federal", "do Espírito Santo", "de Góias", "do Maranhão", "de Minas Gerais", "do Mato Grosso do Sul", "do Mato Grosso", "do Pará", "da Paraíba", "de Pernambuco", " do Piauí", "do Paraná", "do Rio de Janeiro", "do Rio Grande do Norte", "do Rio Grande do Sul", "de Rondônia", "de Roraima", "de Santa Catarina", "de Sergipe", "de São Paulo", "de Tocantins"]
+#listaIdEstados = [" Acre", "de Alagoas", "do Amazonas", "do Amapá", "da Bahia", "do Ceára", "do Distrito Federal", "do Espírito Santo", "de Góias", "do Maranhão", "de Minas Gerais", "do Mato Grosso do Sul", "do Mato Grosso", "do Pará", "da Paraíba", "de Pernambuco", " do Piauí", "do Paraná", "do Rio de Janeiro", "do Rio Grande do Norte", "do Rio Grande do Sul", "de Rondônia", "de Roraima", "de Santa Catarina", "de Sergipe", "de São Paulo", "de Tocantins"]
 
 multiplicador = int(input("Calcular a taxa por 100 habitantes, 500 mil habitantes ou 1 milhão de habitantes?"))
 
