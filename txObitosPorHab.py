@@ -1,22 +1,7 @@
+from funcoes import mensagem_inicial, definicao_taxa, espaco_estado, espaco_resultado, definicao_texto_taxa
 
-print("********************************************************************************************")
-print("**Bem vinda a ferramenta para cálculo da taxa de covid por habitantes no Estados do Brasil**")
-print("********************************************************************************************")
-
-opcao_multiplicador = int(input("""\n	(1) 100 mil habitantes 
-	(2) 500 mil habitantes 
-	(3) 1 milhão de habitantes
-	Selecione a taxa que será ultilizada: """))
-taxa_por_extenso = ["100 mil habitantes", "500 mil habitantes", "1 milhão de habitantes"]
-while (opcao_multiplicador < 1 or opcao_multiplicador > 3):
-	opcao_multiplicador = int(input("	Digite 1, 2 ou 3 "))
-print("\n A taxa escolhida é de: {}\n".format(taxa_por_extenso[opcao_multiplicador - 1]))
-if (opcao_multiplicador == 1):
-	multiplicador = 100000
-elif (opcao_multiplicador == 2):
-	multiplicador = 500000
-elif (opcao_multiplicador == 3):
-	multiplicador = 1000000
+mensagem_inicial()
+multiplicador = definicao_taxa()
 
 lista_estados = {"ac": "Acre ", "al": "Alagoas ", "am": "Amazonas ", "ap": "Amapá ", "ba": "Bahia ", "ce": "Ceára ", "df": "Distrito Federal ", "es": "Espírito Santo ", "go": "Góias ", "ma": "Maranhão ", "mg": "Minas Gerais ", "ms": "Mato Grosso do Sul ","mt": "Mato Grosso ","pa": "Pará ","pb": "Paraíba ","pe": "Pernambuco ","pi": "Piauí ","pr": "Paraná ","rj": "Rio de Janeiro ", "rn": "Rio Grande do Norte ", "rs": "Rio Grande do Sul ", "ro": "Rondônia ", "rr": "Roraima ", "sc": "Santa Catarina ", "se": "Sergipe ", "sp": "São Paulo ", "to": "Tocantins "}
 
@@ -42,14 +27,41 @@ lista_obitos_por_pop_estados = {"ac": round(obitos_por_pop_ac,arredondamento), "
 
 sorted(lista_obitos_por_pop_estados)
 
-if (multiplicador == 100000):
-	texto_padrao = "taxa por 100 mil habitantes"
-elif (multiplicador == 500000):
-	texto_padrao = "taxa por 500 mil habitantes"
-else:
-	texto_padrao = "taxa por 1 milhão de habitantes"
+texto_taxa = definicao_texto_taxa(multiplicador)
 
-listaIdEstados = ["do Acre", "de Alagoas", "do Amazonas", "do Amapá", "da Bahia", "do Ceára", "do Distrito Federal", "do Espírito Santo", "de Góias", "do Maranhão", "de Minas Gerais", "do Mato Grosso do Sul", "do Mato Grosso", "do Pará", "da Paraíba", "de Pernambuco", "do Piauí", "do Paraná", "do Rio de Janeiro", "do Rio Grande do Norte", "do Rio Grande do Sul", "de Rondônia", "de Roraima", "de Santa Catarina", "de Sergipe", "de São Paulo", "de Tocantins"]
+barra_vertical = "|"
+barra_horizontal = "-"
 
-print("\nSegue a lista dos Estados e o DF com a {}:".format(texto_padrao))
-print("\n",lista_estados["ac"],lista_obitos_por_pop_estados["ac"],"\n",lista_estados["al"],lista_obitos_por_pop_estados["al"],"\n",lista_estados["am"],lista_obitos_por_pop_estados["am"],"\n",lista_estados["ap"],lista_obitos_por_pop_estados["ap"],"\n",lista_estados["ba"],lista_obitos_por_pop_estados["ba"],"\n",lista_estados["ce"],lista_obitos_por_pop_estados["ce"],"\n",lista_estados["df"],lista_obitos_por_pop_estados["df"],"\n",lista_estados["es"],lista_obitos_por_pop_estados["es"],"\n",lista_estados["go"],lista_obitos_por_pop_estados["go"],"\n",lista_estados["ma"],lista_obitos_por_pop_estados["ma"],"\n",lista_estados["mg"],lista_obitos_por_pop_estados["mg"],"\n",lista_estados["ms"],lista_obitos_por_pop_estados["ms"],"\n",lista_estados["mt"],lista_obitos_por_pop_estados["mt"],"\n",lista_estados["pa"],lista_obitos_por_pop_estados["pa"],"\n",lista_estados["pb"],lista_obitos_por_pop_estados["pb"],"\n",lista_estados["pe"],lista_obitos_por_pop_estados["pe"],"\n",lista_estados["pi"],lista_obitos_por_pop_estados["pi"],"\n",lista_estados["pr"],lista_obitos_por_pop_estados["pr"],"\n",lista_estados["rj"],lista_obitos_por_pop_estados["rj"],"\n",lista_estados["rn"],lista_obitos_por_pop_estados["rn"],"\n",lista_estados["rs"],lista_obitos_por_pop_estados["rs"],"\n",lista_estados["ro"],lista_obitos_por_pop_estados["ro"],"\n",lista_estados["rr"],lista_obitos_por_pop_estados["rr"],"\n",lista_estados["sc"],lista_obitos_por_pop_estados["sc"],"\n",lista_estados["se"],lista_obitos_por_pop_estados["se"],"\n",lista_estados["sp"],lista_obitos_por_pop_estados["sp"],"\n",lista_estados["to"],lista_obitos_por_pop_estados["to"])
+lista_carac_estados = {"ac": espaco_estado(lista_estados["ac"]), "al": espaco_estado(lista_estados["al"]), "am": espaco_estado(lista_estados["am"]), "ap": espaco_estado(lista_estados["ap"]), "ba": espaco_estado(lista_estados["ba"]), "ce": espaco_estado(lista_estados["ce"]), "df": espaco_estado(lista_estados["df"]), "es": espaco_estado(lista_estados["es"]), "go": espaco_estado(lista_estados["go"]), "ma": espaco_estado(lista_estados["ma"]), "mg": espaco_estado(lista_estados["mg"]), "ms": espaco_estado(lista_estados["ms"]), "mt": espaco_estado(lista_estados["mt"]), "pa": espaco_estado(lista_estados["pa"]), "pb": espaco_estado(lista_estados["pb"]), "pe": espaco_estado(lista_estados["pe"]), "pi": espaco_estado(lista_estados["pi"]), "pr": espaco_estado(lista_estados["pr"]), "rj": espaco_estado(lista_estados["rj"]), "rn": espaco_estado(lista_estados["rn"]), "rs": espaco_estado(lista_estados["rs"]), "ro": espaco_estado(lista_estados["ro"]), "rr": espaco_estado(lista_estados["rr"]), "sc": espaco_estado(lista_estados["sc"]), "se": espaco_estado(lista_estados["se"]), "sp": espaco_estado(lista_estados["sp"]), "to": espaco_estado(lista_estados["to"])}
+lista_carac_resultado = {"ac": espaco_resultado(lista_obitos_por_pop_estados["ac"]), "al": espaco_resultado(lista_obitos_por_pop_estados["al"]), "am": espaco_resultado(lista_obitos_por_pop_estados["am"]), "ap": espaco_resultado(lista_obitos_por_pop_estados["ap"]), "ba": espaco_resultado(lista_obitos_por_pop_estados["ba"]), "ce": espaco_resultado(lista_obitos_por_pop_estados["ce"]), "df": espaco_resultado(lista_obitos_por_pop_estados["df"]), "es": espaco_resultado(lista_obitos_por_pop_estados["es"]), "go": espaco_resultado(lista_obitos_por_pop_estados["go"]), "ma": espaco_resultado(lista_obitos_por_pop_estados["ma"]), "mg": espaco_resultado(lista_obitos_por_pop_estados["mg"]), "ms": espaco_resultado(lista_obitos_por_pop_estados["ms"]), "mt": espaco_resultado(lista_obitos_por_pop_estados["mt"]), "pa": espaco_resultado(lista_obitos_por_pop_estados["pa"]), "pb": espaco_resultado(lista_obitos_por_pop_estados["pb"]), "pe": espaco_resultado(lista_obitos_por_pop_estados["pe"]), "pi": espaco_resultado(lista_obitos_por_pop_estados["pi"]), "pr": espaco_resultado(lista_obitos_por_pop_estados["pr"]), "rj": espaco_resultado(lista_obitos_por_pop_estados["rj"]), "rn": espaco_resultado(lista_obitos_por_pop_estados["rn"]), "rs": espaco_resultado(lista_obitos_por_pop_estados["rs"]), "ro": espaco_resultado(lista_obitos_por_pop_estados["ro"]), "rr": espaco_resultado(lista_obitos_por_pop_estados["rr"]), "sc": espaco_resultado(lista_obitos_por_pop_estados["sc"]), "se": espaco_resultado(lista_obitos_por_pop_estados["se"]), "sp": espaco_resultado(lista_obitos_por_pop_estados["sp"]), "to": espaco_resultado(lista_obitos_por_pop_estados["to"])}
+
+print("\nSegue a lista dos Estados e o DF com a {}:".format(texto_taxa))
+print(barra_horizontal*35)
+print(barra_vertical,lista_estados["ac"],lista_carac_estados["ac"],barra_vertical,lista_carac_resultado["ac"],lista_obitos_por_pop_estados["ac"],barra_vertical)
+print(barra_vertical,lista_estados["al"],lista_carac_estados["al"],barra_vertical,lista_carac_resultado["al"],lista_obitos_por_pop_estados["al"],barra_vertical)
+print(barra_vertical,lista_estados["am"],lista_carac_estados["am"],barra_vertical,lista_carac_resultado["am"],lista_obitos_por_pop_estados["am"],barra_vertical)
+print(barra_vertical,lista_estados["ap"],lista_carac_estados["ap"],barra_vertical,lista_carac_resultado["ap"],lista_obitos_por_pop_estados["ap"],barra_vertical)
+print(barra_vertical,lista_estados["ba"],lista_carac_estados["ba"],barra_vertical,lista_carac_resultado["ba"],lista_obitos_por_pop_estados["ba"],barra_vertical)
+print(barra_vertical,lista_estados["ce"],lista_carac_estados["ce"],barra_vertical,lista_carac_resultado["ce"],lista_obitos_por_pop_estados["ce"],barra_vertical)
+print(barra_vertical,lista_estados["df"],lista_carac_estados["df"],barra_vertical,lista_carac_resultado["df"],lista_obitos_por_pop_estados["df"],barra_vertical)
+print(barra_vertical,lista_estados["es"],lista_carac_estados["es"],barra_vertical,lista_carac_resultado["es"],lista_obitos_por_pop_estados["es"],barra_vertical)
+print(barra_vertical,lista_estados["go"],lista_carac_estados["go"],barra_vertical,lista_carac_resultado["go"],lista_obitos_por_pop_estados["go"],barra_vertical)
+print(barra_vertical,lista_estados["ma"],lista_carac_estados["ma"],barra_vertical,lista_carac_resultado["ma"],lista_obitos_por_pop_estados["ma"],barra_vertical)
+print(barra_vertical,lista_estados["mg"],lista_carac_estados["mg"],barra_vertical,lista_carac_resultado["mg"],lista_obitos_por_pop_estados["mg"],barra_vertical)
+print(barra_vertical,lista_estados["ms"],lista_carac_estados["ms"],barra_vertical,lista_carac_resultado["ms"],lista_obitos_por_pop_estados["ms"],barra_vertical)
+print(barra_vertical,lista_estados["mt"],lista_carac_estados["mt"],barra_vertical,lista_carac_resultado["mt"],lista_obitos_por_pop_estados["mt"],barra_vertical)
+print(barra_vertical,lista_estados["pa"],lista_carac_estados["pa"],barra_vertical,lista_carac_resultado["pa"],lista_obitos_por_pop_estados["pa"],barra_vertical)
+print(barra_vertical,lista_estados["pb"],lista_carac_estados["pb"],barra_vertical,lista_carac_resultado["pb"],lista_obitos_por_pop_estados["pb"],barra_vertical)
+print(barra_vertical,lista_estados["pe"],lista_carac_estados["pe"],barra_vertical,lista_carac_resultado["pe"],lista_obitos_por_pop_estados["pe"],barra_vertical)
+print(barra_vertical,lista_estados["pi"],lista_carac_estados["pi"],barra_vertical,lista_carac_resultado["pi"],lista_obitos_por_pop_estados["pi"],barra_vertical)
+print(barra_vertical,lista_estados["pr"],lista_carac_estados["pr"],barra_vertical,lista_carac_resultado["pr"],lista_obitos_por_pop_estados["pr"],barra_vertical)
+print(barra_vertical,lista_estados["rj"],lista_carac_estados["rj"],barra_vertical,lista_carac_resultado["rj"],lista_obitos_por_pop_estados["rj"],barra_vertical)
+print(barra_vertical,lista_estados["rn"],lista_carac_estados["rn"],barra_vertical,lista_carac_resultado["rn"],lista_obitos_por_pop_estados["rn"],barra_vertical)
+print(barra_vertical,lista_estados["rs"],lista_carac_estados["rs"],barra_vertical,lista_carac_resultado["rs"],lista_obitos_por_pop_estados["rs"],barra_vertical)
+print(barra_vertical,lista_estados["ro"],lista_carac_estados["ro"],barra_vertical,lista_carac_resultado["ro"],lista_obitos_por_pop_estados["ro"],barra_vertical)
+print(barra_vertical,lista_estados["rr"],lista_carac_estados["rr"],barra_vertical,lista_carac_resultado["rr"],lista_obitos_por_pop_estados["rr"],barra_vertical)
+print(barra_vertical,lista_estados["sc"],lista_carac_estados["sc"],barra_vertical,lista_carac_resultado["sc"],lista_obitos_por_pop_estados["sc"],barra_vertical)
+print(barra_vertical,lista_estados["se"],lista_carac_estados["se"],barra_vertical,lista_carac_resultado["se"],lista_obitos_por_pop_estados["se"],barra_vertical)
+print(barra_vertical,lista_estados["sp"],lista_carac_estados["sp"],barra_vertical,lista_carac_resultado["sp"],lista_obitos_por_pop_estados["sp"],barra_vertical)
+print(barra_vertical,lista_estados["to"],lista_carac_estados["to"],barra_vertical,lista_carac_resultado["to"],lista_obitos_por_pop_estados["to"],barra_vertical)
+print(barra_horizontal*35)
