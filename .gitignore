@@ -1,2 +1,9 @@
 /teste
 /teste.py
+
+27/06
+função calculo para o aquivo funções
+
+28/06
+lista_obitos_por_pop = [obitos_por_pop_ac, obitos_por_pop_al, obitos_por_pop_am, obitos_por_pop_ap, obitos_por_pop_ba, obitos_por_pop_ce, obitos_por_pop_df, obitos_por_pop_es, obitos_por_pop_go, obitos_por_pop_ma, obitos_por_pop_mg, obitos_por_pop_ms, obitos_por_pop_mt, obitos_por_pop_pa, obitos_por_pop_pb, obitos_por_pop_pe, obitos_por_pop_pi, obitos_por_pop_pr, obitos_por_pop_rj, obitos_por_pop_rn, obitos_por_pop_rs, obitos_por_pop_ro, obitos_por_pop_rr, obitos_por_pop_sc, obitos_por_pop_se, obitos_por_pop_sp, obitos_por_pop_to]
+print(sorted(lista_obitos_por_pop, reverse=True)
