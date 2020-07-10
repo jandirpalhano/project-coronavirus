@@ -48,5 +48,6 @@ def definicao_obito_ou_caso():
     return definicao
 
 def calculo_por_habitantes (dados, pop, multiplicador):
-    return (dados / pop) * multiplicador
+    arredondamento = 1
+    return round((dados / pop) * multiplicador, arredondamento)
 
